@@ -1,17 +1,24 @@
 import type {NextPage} from 'next'
 import NavBar from '../components/NavBar'
-import Image from "next/image";
-import imgSmHorizontalLine from "../public/assets/img/sm-navbar-h-line.svg";
-import imgHorizontalLine from "../public/assets/img/line-1@1x.svg";
+import Home from '../components/Home'
+import About from '../components/About'
+import Innovation from '../components/Innovation'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
-const Home: NextPage = () => {
+const App: NextPage = () => {
     return (
-        <div className={'p-0'}>
-            <NavBar/>
-            {/*<Image className={'opacity-100 sm:opacity-0 w-screen left-0'} src={imgSmHorizontalLine} alt=""/>
-            <Image className={'opacity-0 sm:opacity-100 absolute w-screen left-16 '} src={imgHorizontalLine} alt=""/>*/}
+        <div>
+            <div id={'App'} className={'app p-0'}>
+                <NavBar/>
+                <Home/>
+                <About/>
+                <Innovation/>
+                <Contact/>
+                <Footer/>
+                <div className={'noisy-background z-50 pointer-events-none fixed top-0 left-0 w-screen h-screen'}/>
+            </div>
         </div>
     )
 }
-
-export default Home
+export default App;
