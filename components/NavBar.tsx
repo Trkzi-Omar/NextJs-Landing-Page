@@ -5,6 +5,8 @@ import imgRightArrow from "../public/assets/img/arrow-1-2@2x.svg";
 import imgHamburger from "../public/assets/img/hamburger.svg";
 import imgX from "../public/assets/img/X-hamburger-exit.svg";
 import imgLineMenu from "../public/assets/img/Line-Hamburger-Menu.svg";
+import SocialLinks from "./SocialLinks";
+import {motion} from "framer-motion";
 
 const NavBar: NextPage = () => {
     const [sideMenuVisibility, setSideMenuVisibility] = useState('hidden')
@@ -18,21 +20,53 @@ const NavBar: NextPage = () => {
             sm:bg-[url('../public/assets/img/line-1@1x.svg')]
             "
             onChange={() => setSideMenuVisibility('hidden')}>
-            <a className={'logo-text ml-10 mr-4 cursor-pointer'} href={'/'}>S</a>
-            <ul className={'hidden md:flex overflow-hidden'}>
-                <li className={'nav-links text-opacity-90 font-light hover:text-opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                    <a href={'#Home'}>Home</a>
-                </li>
-                <li className={'nav-links text-opacity-90 font-light hover:text-opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                    <a href={'#About'}>About</a>
-                </li>
-                <li className={'nav-links text-opacity-90 font-light hover:text-opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                    <a href={'#Innovation'}>Innovation</a>
-                </li>
-                <li className={'nav-links text-opacity-90 font-light hover:text-opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                    <a href={'#Contact'}>Contact</a>
-                </li>
+
+            <motion.div
+                initial={{y: -100, opacity: 0}}
+                animate={{y: 0, opacity: 1}}
+                transition={{duration: 2, ease: "easeInOut"}}
+            >
+                <a className={'logo-text ml-10 mr-4 cursor-pointer'} href={'/'}>S</a>
+            </motion.div>
+            <ul className={'hidden md:flex overflow-visible'}>
+                <motion.div
+                    initial={{y: -400}}
+                    animate={{y: 0}}
+                    transition={{duration: 2, ease: "easeInOut"}}
+                >
+                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
+                        <a href={'#Home'}>Home</a>
+                    </li>
+                </motion.div>
+                <motion.div
+                    initial={{y: -300}}
+                    animate={{y: 0}}
+                    transition={{duration: 2, ease: "easeInOut"}}
+                >
+                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
+                        <a href={'#About'}>About</a>
+                    </li>
+                </motion.div>
+                <motion.div
+                    initial={{y: -200}}
+                    animate={{y: 0}}
+                    transition={{duration: 2, ease: "easeInOut"}}
+                >
+                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
+                        <a href={'#Innovation'}>Innovation</a>
+                    </li>
+                </motion.div>
+                <motion.div
+                    initial={{y: -100}}
+                    animate={{y: 0}}
+                    transition={{duration: 2, ease: "easeInOut"}}
+                >
+                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
+                        <a href={'#Contact'}>Contact</a>
+                    </li>
+                </motion.div>
             </ul>
+            <SocialLinks/>
             <span className={'cursor-pointer ml-1 mr-8'}>
                 <button className={'flex md:hidden'}
                         onClick={() => {
@@ -40,13 +74,21 @@ const NavBar: NextPage = () => {
                         }}>
                     <Image src={imgHamburger} alt={''}/>
                 </button>
-                <a className={'hidden md:flex whitespace-nowrap group'}>
-                    <span>Sign-in</span>
-                    <span className={'pl-2 pr-2 group-hover:pl-4 group-hover:pr-0 duration-700 ease-in-out'}>
-                        <Image src={imgRightArrow} alt={''}/>
-                    </span>
-                </a>
+                <motion.div
+                    initial={{x: 100, opacity: 0}}
+                    animate={{x: 0, opacity: 1}}
+                    transition={{duration: 2}}
+                >
+                    <a className={'hidden md:flex whitespace-nowrap group'} href={'#sign-in'}>
+                        <span>Sign-in</span>
+                        <span className={'pl-2 pr-2 group-hover:pl-4 group-hover:pr-0 duration-700 ease-in-out'}>
+                            <Image src={imgRightArrow} alt={''}/>
+                        </span>
+                    </a>
+                </motion.div>
             </span>
+
+            {/*Hamburger menu*/}
             <div
                 className={sideMenuVisibility + ' md:hidden bg-black z-50 fixed flex flex-nowrap flex-col top-0 left-0 right-0 bottom-0'}>
                 <button className={'relative flex flex-row-reverse mr-12 mt-8'}
