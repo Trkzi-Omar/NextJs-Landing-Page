@@ -1,15 +1,14 @@
 import type {NextPage} from 'next'
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import Image from "next/image";
 import imgRightArrow from "../public/assets/img/arrow-1-2@2x.svg";
 import imgHamburger from "../public/assets/img/hamburger.svg";
-import imgHorizontalLine from "../public/assets/img/line-1@1x.svg";
 
 const NavBar: NextPage = () => {
     const [sideMenuVisibility, setSideMenuVisibility] = useState('hidden')
     return (
         <nav
-            className="flex flex-wrap items-center justify-between
+            className="flex flex-nowrap md:flex-wrap items-center justify-between
             w-full pb-1 sm:pb-3 pt-2 md:pt-4 px-0 md:px-12 xl:px-28 2xl:px-40
             text-lg text-white bg-transparent
             bg-no-repeat bg-left-bottom bg-origin-border
