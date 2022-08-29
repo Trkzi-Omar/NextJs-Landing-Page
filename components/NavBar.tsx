@@ -3,6 +3,8 @@ import {useState} from "react";
 import Image from "next/image";
 import imgRightArrow from "../public/assets/img/arrow-1-2@2x.svg";
 import imgHamburger from "../public/assets/img/hamburger.svg";
+import imgX from "../public/assets/img/X-hamburger-exit.svg";
+import imgLineMenu from "../public/assets/img/Line-Hamburger-Menu.svg";
 
 const NavBar: NextPage = () => {
     const [sideMenuVisibility, setSideMenuVisibility] = useState('hidden')
@@ -34,8 +36,7 @@ const NavBar: NextPage = () => {
             <span className={'cursor-pointer ml-1 mr-8'}>
                 <button className={'flex md:hidden'}
                         onClick={() => {
-                            setSideMenuVisibility('hidden' === sideMenuVisibility ? 'visible' : 'hidden')
-                            console.log(sideMenuVisibility)
+                            setSideMenuVisibility('visible')
                         }}>
                     <Image src={imgHamburger} alt={''}/>
                 </button>
@@ -47,11 +48,29 @@ const NavBar: NextPage = () => {
                 </a>
             </span>
             <div
-                className={sideMenuVisibility + ' md:hidden flex flex-wrap items-center  justify-between px-2 m-auto text-center h-auto w-full'}>
-                <a className={'nav-links cursor-pointer mx-auto'} href={'#Home'}>Home</a>
-                <a className={'nav-links cursor-pointer mx-auto'} href={'#About'}>About</a>
-                <a className={'nav-links cursor-pointer mx-auto'} href={'#Innovation'}>Innovation</a>
-                <a className={'nav-links cursor-pointer mx-auto'} href={'#Contact'}>Contact</a>
+                className={sideMenuVisibility + ' md:hidden bg-black z-50 fixed flex flex-nowrap flex-col top-0 left-0 right-0 bottom-0'}>
+                <button className={'relative flex flex-row-reverse mr-12 mt-8'}
+                        onClick={() => {
+                            setSideMenuVisibility('hidden')
+                        }}>
+                    <Image src={imgX} alt={'X'} className={'nav-links cursor-pointer'}/>
+                </button>
+                <div
+                    className={' flex flex-col flex-nowrap overflow-visible justify-start px-auto m-auto text-center h-screen w-full'}>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Home'}>Home</a>
+                    <span className={'py-10 justify-items-center grid'}>
+                    <Image className={''} src={imgLineMenu} alt={''}/>
+                    </span>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#About'}>About</a>
+                    <span className={'py-10 justify-items-center grid'}>
+                    <Image className={''} src={imgLineMenu} alt={''}/>
+                    </span>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Innovation'}>Innovation</a>
+                    <span className={'py-10 justify-items-center grid'}>
+                    <Image className={''} src={imgLineMenu} alt={''}/>
+                    </span>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Contact'}>Contact</a>
+                </div>
             </div>
         </nav>
     )
