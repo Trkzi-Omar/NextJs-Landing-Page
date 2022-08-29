@@ -8,7 +8,7 @@ const NavBar: NextPage = () => {
     const [sideMenuVisibility, setSideMenuVisibility] = useState('hidden')
     return (
         <nav
-            className="flex flex-nowrap md:flex-wrap items-center justify-between
+            className="flex flex-wrap items-center justify-between
             w-full pb-1 sm:pb-3 pt-2 md:pt-4 px-0 md:px-12 xl:px-28 2xl:px-40
             text-lg text-white bg-transparent
             bg-no-repeat bg-left-bottom bg-origin-border
