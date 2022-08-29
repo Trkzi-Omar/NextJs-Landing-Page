@@ -16,7 +16,9 @@ const App: NextPage = () => {
                 <Innovation/>
                 <Contact/>
                 <Footer/>
+{/*
                 <div className={'noisy-background z-50 pointer-events-none fixed top-0 left-0 w-screen h-screen'}/>
+*/}
             </div>
         </div>
     )

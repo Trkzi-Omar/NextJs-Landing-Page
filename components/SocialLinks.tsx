@@ -1,7 +1,5 @@
 import {NextPage} from "next";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 const SocialLinks: NextPage = () => {
     return (
