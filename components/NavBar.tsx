@@ -57,19 +57,31 @@ const NavBar: NextPage = () => {
                 </button>
                 <div
                     className={' flex flex-col flex-nowrap overflow-visible justify-start px-auto m-auto text-center h-screen w-full'}>
-                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Home'}>Home</a>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Home'}
+                       onClick={() => {
+                           setSideMenuVisibility('hidden')
+                       }}>Home</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer mx-auto'} href={'#About'}>About</a>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#About'}
+                       onClick={() => {
+                           setSideMenuVisibility('hidden')
+                       }}>About</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Innovation'}>Innovation</a>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Innovation'}
+                       onClick={() => {
+                           setSideMenuVisibility('hidden')
+                       }}>Innovation</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Contact'}>Contact</a>
+                    <a className={'nav-links cursor-pointer mx-auto'} href={'#Contact'}
+                       onClick={() => {
+                           setSideMenuVisibility('hidden')
+                       }}>Contact</a>
                 </div>
             </div>
         </nav>
