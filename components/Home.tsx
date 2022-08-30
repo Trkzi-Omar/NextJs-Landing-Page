@@ -27,9 +27,8 @@ const Home: NextPage = () => {
                         </p>
                     </motion.div>
                     <div className={'buttons hidden md:flex float-left flex-wrap justify-start pt-14'}>
-
                         <motion.div
-                            initial={{y: 500, opacity: 0}}
+                            initial={{y: 400, opacity: 0}}
                             animate={{y: 0, opacity: 1}}
                             transition={{duration: 2, ease: "easeInOut"}}
                         >
@@ -46,7 +45,7 @@ const Home: NextPage = () => {
                         </motion.div>
                         <div className={'w-0 h-auto px-1'}/>
                         <motion.div
-                            initial={{y: 500, opacity: 0}}
+                            initial={{y: 470, opacity: 0}}
                             animate={{y: 0, opacity: 1}}
                             transition={{duration: 2, ease: "easeInOut"}}
                         >
@@ -60,7 +59,12 @@ const Home: NextPage = () => {
                 </div>
                 <div className={'home-text-upper-right-max-md  md:hidden mt-60 flex flex-row-reverse'}>
                     <div className={'buttons w-1/2 mr-5 flex float-right flex-wrap justify-end'}>
-                        <div
+                        <motion.div
+                            initial={{y: 400, opacity: 0}}
+                            animate={{y: 0, opacity: 1}}
+                            transition={{duration: 2, ease: "easeInOut"}}
+                        >
+                            <div
                             className={'arrow-box group w-min mx-0 my-1 p-0 flex items-center cursor-pointer' +
                                 ' grid content-center place-items-center' +
                                 ' bg-[url("../public/assets/img/Rectangle-Arrow.svg")]' +
@@ -70,12 +74,19 @@ const Home: NextPage = () => {
                                     ' grid content-center place-items-center' +
                                     ' group-hover:mt-3.5 group-hover:mb-0.5 duration-700 ease-in-out'}/>
                         </div>
+                        </motion.div>
                         <div className={'w-0 h-auto px-1'}/>
+                        <motion.div
+                            initial={{y: 470, opacity: 0}}
+                            animate={{y: 0, opacity: 1}}
+                            transition={{duration: 2, ease: "easeInOut"}}
+                        >
                         <div
                             className={'learn-more ml-0 mr-0 my-1 p-0 overflow-visible grid content-center place-items-center  cursor-pointer ' +
                                 ' bg-origin-padding bg-cover bg-center bg-[url("../public/assets/img/Rectangle-upper-left-gradient-learn-more.svg")]  bg-no-repeat'}>
                             <a className={'p-0 m-0 w-min whitespace-nowrap'}>Learn more</a>
                         </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
