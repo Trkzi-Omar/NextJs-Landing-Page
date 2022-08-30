@@ -10,6 +10,10 @@ import {motion} from "framer-motion";
 
 const NavBar: NextPage = () => {
     const [sideMenuVisibility, setSideMenuVisibility] = useState('hidden')
+    const [activeLink, setActiveLink] = useState('Home');
+    const onUpdateActiveLink = (value: string) => {
+        setActiveLink(value);
+    }
     return (
         <nav
             className="flex flex-nowrap items-center justify-between
@@ -34,8 +38,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                        <a href={'#Home'}>Home</a>
+                    <li className={(activeLink ==='Home'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Home'} onClick={()=>onUpdateActiveLink('Home')}>Home</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -43,8 +47,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                        <a href={'#About'}>About</a>
+                    <li className={(activeLink ==='About'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#About'} onClick={()=>onUpdateActiveLink('About')}>About</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -52,8 +56,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                        <a href={'#Innovation'}>Innovation</a>
+                    <li className={(activeLink ==='Innovation'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Innovation'} onClick={()=>onUpdateActiveLink('Innovation')}>Innovation</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -61,8 +65,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={'nav-links opacity-50 font-light hover:opacity-100 hover:font-bold mx-4 lg:mx-8'}>
-                        <a href={'#Contact'}>Contact</a>
+                    <li className={(activeLink ==='Contact'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Contact'} onClick={()=>onUpdateActiveLink('Contact')}>Contact</a>
                     </li>
                 </motion.div>
             </ul>
