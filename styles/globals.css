@@ -50,10 +50,12 @@ html {
     background-color: black; /*just in case the device height is too long (maybe some weird device in the future)*/
 }
 
+/* @Deprecated: The designer decided to remove it
 .noisy-background {
     background-image: url("../public/assets/img/Rectangle-Fullscreen-Noise-1.svg"), url("../public/assets/img/Rectangle-Fullscreen-Noise-1.svg");
     background-repeat: repeat, repeat;
 }
+*/
 
 /* App */
 #App {

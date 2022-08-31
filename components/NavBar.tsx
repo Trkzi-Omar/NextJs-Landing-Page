@@ -38,8 +38,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={(activeLink ==='Home'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
-                        <a href={'#Home'} onClick={()=>onUpdateActiveLink('Home')}>Home</a>
+                    <li className={(activeLink === 'Home' ? ' opacity-100 font-bold ' : ' opacity-50 font-light ') + 'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Home'} onClick={() => onUpdateActiveLink('Home')}>Home</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -47,8 +47,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={(activeLink ==='About'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
-                        <a href={'#About'} onClick={()=>onUpdateActiveLink('About')}>About</a>
+                    <li className={(activeLink === 'About' ? ' opacity-100 font-bold ' : ' opacity-50 font-light ') + 'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#About'} onClick={() => onUpdateActiveLink('About')}>About</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -56,8 +56,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={(activeLink ==='Innovation'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
-                        <a href={'#Innovation'} onClick={()=>onUpdateActiveLink('Innovation')}>Innovation</a>
+                    <li className={(activeLink === 'Innovation' ? ' opacity-100 font-bold ' : ' opacity-50 font-light ') + 'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Innovation'} onClick={() => onUpdateActiveLink('Innovation')}>Innovation</a>
                     </li>
                 </motion.div>
                 <motion.div
@@ -65,8 +65,8 @@ const NavBar: NextPage = () => {
                     animate={{y: 0}}
                     transition={{duration: 2, ease: "easeInOut"}}
                 >
-                    <li className={(activeLink ==='Contact'?' opacity-100 font-bold ':' opacity-50 font-light ')+'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
-                        <a href={'#Contact'} onClick={()=>onUpdateActiveLink('Contact')}>Contact</a>
+                    <li className={(activeLink === 'Contact' ? ' opacity-100 font-bold ' : ' opacity-50 font-light ') + 'nav-links hover:opacity-100 hover:font-bold mx-4 lg:mx-8 '}>
+                        <a href={'#Contact'} onClick={() => onUpdateActiveLink('Contact')}>Contact</a>
                     </li>
                 </motion.div>
             </ul>
@@ -103,29 +103,33 @@ const NavBar: NextPage = () => {
                 </button>
                 <div
                     className={' flex flex-col flex-nowrap overflow-visible justify-start px-auto m-auto text-center h-screen w-full'}>
-                    <a className={'nav-links cursor-pointer hover:font-black mx-auto'} href={'#Home'}
+                    <a className={'nav-links cursor-pointer opacity-50 font-light hover:opacity-100 hover:font-black mx-auto'} href={'#Home'}
                        onClick={() => {
+                           onUpdateActiveLink('Home');
                            setSideMenuVisibility('hidden')
                        }}>Home</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer hover:font-black mx-auto'} href={'#About'}
+                    <a className={'nav-links cursor-pointer opacity-50 font-light hover:opacity-100 hover:font-black mx-auto'} href={'#About'}
                        onClick={() => {
+                           onUpdateActiveLink('About');
                            setSideMenuVisibility('hidden')
                        }}>About</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer hover:font-black mx-auto'} href={'#Innovation'}
+                    <a className={'nav-links cursor-pointer opacity-50 font-light hover:opacity-100 hover:font-black mx-auto'} href={'#Innovation'}
                        onClick={() => {
+                           onUpdateActiveLink('Innovation');
                            setSideMenuVisibility('hidden')
                        }}>Innovation</a>
                     <span className={'py-10 justify-items-center grid'}>
                     <Image className={''} src={imgLineMenu} alt={''}/>
                     </span>
-                    <a className={'nav-links cursor-pointer hover:font-black mx-auto'} href={'#Contact'}
+                    <a className={'nav-links cursor-pointer opacity-50 font-light hover:opacity-100 hover:font-black mx-auto'} href={'#Contact'}
                        onClick={() => {
+                           onUpdateActiveLink('Contact');
                            setSideMenuVisibility('hidden')
                        }}>Contact</a>
                 </div>
